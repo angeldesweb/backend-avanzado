@@ -15,7 +15,7 @@
       
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="/">Inicio
+            <a id="home-link" class="nav-link active" href="/">Inicio
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
@@ -23,23 +23,10 @@
             <a class="nav-link" href="/anuncios">Demo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/tags">Tags</a>
+            <a id="tags-link" class="nav-link" href="/tags">Etiquetas</a>
           </li>
         </ul>
 
     </div>
   </nav>
-
-  <button id="btn-lang" style="margin-left:1rem;" class="btn btn-primary">Cambiar idioma</button>
-
-  <script>
-    const btnLang = document.getElementById('btn-lang');
-    btnLang.addEventListener('click',() => {
-      document.documentElement.lang === 'es' ? 
-      document.documentElement.lang = 'en' : 
-      document.documentElement.lang = 'es';
-      alert(document.documentElement.lang);
-    }
-    )
-    
-  </script>
+  <br>

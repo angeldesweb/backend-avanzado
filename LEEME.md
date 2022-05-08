@@ -1,3 +1,4 @@
+
 # Nodepop
 
 [Demo](/anuncios) 
@@ -50,23 +51,27 @@ Ejemplo: ?skip=0&limit=2&selltype=true&min=10&max=100&tag=mobile&name=Iphone
 
 **Result:** 
 
-    {
-      "ok": true,
-      "result": {
-        "rows": [
-          {
-            "_id": "55fd9abda8cd1d9a240c8230",
-            "name": "Iphone",
-            "selltype": true,
-            "precio": 50,
-            "foto": "/images/anuncios/iphone.png",
-            "__v": 0,
-            "tags": [
-              "lifestyle",
-              "mobile"
-            ]
-          }
-        ],
-        "total": 1
+```javascript
+
+{
+  ok: true,
+  result: {
+    rows: [
+      {
+        _id: "55fd9abda8cd1d9a240c8230",
+        name: "Iphone",
+        selltype: true,
+        precio: 50,
+        foto: "/images/anuncios/iphone.png",
+        __v: 0,
+        tags: [
+          "lifestyle",
+          "mobile"
+        ]
       }
-    }
+    ],
+    total: 1
+  }
+}
+
+```

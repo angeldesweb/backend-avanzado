@@ -1,3 +1,4 @@
+
 # Nodepop
 
 [Demo](/anuncios) 
@@ -50,6 +51,8 @@ EXAMPLE: ?skip=0&limit=2&selltype=true&min=10&max=100&tag=mobile&name=Iphone
 
 **Result:** 
 
+```javascript
+
     {
       "ok": true,
       "result": {
@@ -70,3 +73,5 @@ EXAMPLE: ?skip=0&limit=2&selltype=true&min=10&max=100&tag=mobile&name=Iphone
         "total": 1
       }
     }
+
+```

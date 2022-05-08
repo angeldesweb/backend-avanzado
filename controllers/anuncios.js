@@ -1,6 +1,6 @@
 const Anuncio = require('../models/Anuncio');
 const { nanoid } = require('nanoid');
-const client = require('../services/micro');
+
 
 const anunciosQuery = async (args) => {
     try {
@@ -30,6 +30,7 @@ const getAnuncios = async (req,res,next) => {
 };
 
 const createAnuncio = async (req,res,next) => {
+    const client = require('../services/micro');
     try {
         const { body , file } = req;
         const id = await nanoid();

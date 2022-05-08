@@ -54,7 +54,9 @@
 <script>
   const images = document.querySelectorAll('img');
   images.forEach(image => {
-    if(image.naturalHeight === 0) image.src = '/images/Not.png'
+    image.addEventListener('load',() => {
+      if(image.naturalHeight === 0) image.src = '/images/Not.png'
+    })
   });
 </script>
 <%- include("footer") -%>

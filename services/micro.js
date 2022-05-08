@@ -11,13 +11,13 @@ const client = new cote.Requester({name:'resizer client'});
 service.on('resize',async (req , cb) => {
     const name = 'thumb'+ req.id +'.jpg';
     try {
-        const image = await jimp.read(req.file.path)
+        const image = await jimp.read(req.file.path);
         await image.resize(100,100)
         .quality(60)
         .write(imgDir + name);
         cb(null,{imagen:'/thumbnails/'+name});
     } catch (error) {
-        cb(error)
+        cb(error,null)
     }
 });
 

@@ -3,20 +3,19 @@ const { Router } = require('express');
 const api = require('./api');
 const adv = require('./adv');
 
-const fs = require('fs');
+const { readFile } = require('fs');
 const path = require('path');
-
-const readme = fs.readFileSync(path.join(__dirname, '../README.md'),{encoding:'utf8'});
-const leeme = fs.readFileSync(path.join(__dirname, '../LEEME.md'),{encoding:'utf8'});
+const readmeUrl = path.join(__dirname, '../README.md');
+const leemeUrl = path.join(__dirname, '../LEEME.md');
 
 const router = Router();
 
 router.use('/api',api);
 router.use('/anuncios',adv);
-
 router.get('/', async (req,res) => {
   try {
-    //const filename = path.join(__dirname, '../README.md'); 
+    const readme = await new Promise((resp,reje) => readFile(readmeUrl,'utf8',(err,doc) => err ? reje(err) : resp(doc)));
+    const leeme = await new Promise((resp,reje) => readFile(leemeUrl,'utf8',(err,doc) => err ? reje(err) : resp(doc)));
     return res.render('index',{readme,leeme});
   } catch (error) {
     return res.render('error',{error,message:'Error del servidor'});
@@ -30,6 +29,10 @@ router.get('/tags',(req,res) => {
     {id:3,name:'lifestyle'},
     {id:4,name:'motor'}]
     res.render('tags',{tags})
+})
+
+router.get('/test',async (req, res) => {
+  return res.status(200).json({message: 'pass!'});
 })
 
 module.exports = router;

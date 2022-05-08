@@ -7,7 +7,14 @@
     "dev": "nodemon index.js",
     "init": "node services/initDb.js",
     "lint": "eslint .",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -30,7 +37,9 @@
   "devDependencies": {
     "dotenv": "^16.0.0",
     "eslint": "^8.14.0",
+    "jest": "^28.1.0",
     "nodemon": "^2.0.16",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "supertest": "^6.2.3"
   }
 }
